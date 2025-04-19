@@ -1,14 +1,14 @@
 def get_version() -> str:
     """
-    Returns the version details. Do not Interfere with this !
+    Returns the version details of Mirror Beast.
 
     :return: The version details in the format 'vMAJOR.MINOR.PATCH-STATE'
     :rtype: str
     """
-    MAJOR = "3"
+    MAJOR = "1"
     MINOR = "0"
-    PATCH = "4"
-    STATE = "x"
+    PATCH = "0"
+    STATE = "beast"
     return f"v{MAJOR}.{MINOR}.{PATCH}-{STATE}"
 
 

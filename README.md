@@ -1,189 +1,157 @@
 <p align="center">
-    <a href="https://github.com/SilentDemonSD/WZML-X">
+    <a href="https://github.com/BeastBots/MirrorBeast">
         <kbd>
-            <img width="250" src="https://graph.org/file/639fe4239b78e5862b302.jpg" alt="WZML-X Logo">
+            <img width="250" src="https://i.imgur.com/1QEBdAB.png" alt="Mirror Beast Logo">
         </kbd>
     </a>
 
-<i>This repository is a feature-enhanced version of the [mirror-leech-telegram-bot](https://github.com/anasty17/mirror-leech-telegram-bot). It integrates various improvements from multiple sources, expanding functionality while maintaining efficiency. Unlike the base repository, this version is fully deployable on Heroku.</i>
+<i>Mirror Beast is a powerful, feature-rich Telegram bot for downloading, mirroring, and managing various types of content. Based on WZML-X by SilentDemonSD with significant enhancements and optimizations.</i>
 
 </p>
 
 <div align=center>
 
-[![](https://img.shields.io/github/repo-size/weebzone/WZML-X?color=green&label=Repo%20Size&labelColor=292c3b)](#) [![](https://img.shields.io/github/commit-activity/m/weebzone/WZML-X?logo=github&labelColor=292c3b&label=Github%20Commits)](#) [![](https://img.shields.io/github/license/weebzone/WZML-X?style=flat&label=License&labelColor=292c3b)](#)|[![](https://img.shields.io/github/issues-raw/weebzone/WZML-X?style=flat&label=Open%20Issues&labelColor=292c3b)](#) [![](https://img.shields.io/github/issues-closed-raw/weebzone/WZML-X?style=flat&label=Closed%20Issues&labelColor=292c3b)](#) [![](https://img.shields.io/github/issues-pr-raw/weebzone/WZML-X?style=flat&label=Open%20Pull%20Requests&labelColor=292c3b)](#) [![](https://img.shields.io/github/issues-pr-closed-raw/weebzone/WZML-X?style=flat&label=Closed%20Pull%20Requests&labelColor=292c3b)](#)
-:---:|:---:|
-[![](https://img.shields.io/github/languages/count/weebzone/WZML-X?style=flat&label=Total%20Languages&labelColor=292c3b&color=blueviolet)](#) [![](https://img.shields.io/github/languages/top/weebzone/WZML-X?style=flat&logo=python&labelColor=292c3b)](#) [![](https://img.shields.io/github/last-commit/weebzone/WZML-X?style=flat&label=Last%20Commit&labelColor=292c3b&color=important)](#) [![](https://badgen.net/github/branches/weebzone/WZML-X?label=Total%20Branches&labelColor=292c3b)](#)|[![](https://img.shields.io/github/forks/weebzone/WZML-X?style=flat&logo=github&label=Forks&labelColor=292c3b&color=critical)](#) [![](https://img.shields.io/github/stars/weebzone/WZML-X?style=flat&logo=github&label=Stars&labelColor=292c3b&color=yellow)](#) [![](https://badgen.net/docker/pulls/codewithweeb/weebzone?icon=docker&label=Pulls&labelColor=292c3b&color=blue)](#)
-[![](https://img.shields.io/badge/Telegram%20Channel-Join-9cf?style=for-the-badge&logo=telegram&logoColor=blue&style=flat&labelColor=292c3b)](https://t.me/WZML_X) |[![](https://img.shields.io/badge/Support%20Group-Join-9cf?style=for-the-badge&logo=telegram&logoColor=blue&style=flat&labelColor=292c3b)](https://t.me/WZML_Support) |
+[![](https://img.shields.io/badge/Mirror%20Beast-v1.0.0--beast-blue?style=flat&labelColor=292c3b)](#) [![](https://img.shields.io/badge/License-MIT-important?style=flat&labelColor=292c3b)](https://github.com/BeastBots/MirrorBeast/blob/master/LICENSE) [![](https://img.shields.io/badge/Telegram-Channel-9cf?style=flat&logo=telegram&logoColor=blue&labelColor=292c3b)](https://t.me/MirrorBeast) [![](https://img.shields.io/badge/Support-Group-9cf?style=flat&logo=telegram&logoColor=blue&labelColor=292c3b)](https://t.me/MirrorBeastSupport)
 
 </div>
 
 ---
-Below is a refined version that preserves all the important details while enhancing readability and design :
+
+# ✨ Mirror Beast Features
+
+- **Multi-source Downloads**: Torrents, direct links, Google Drive, Mega.nz, Telegram files, and more
+- **Multi-destination Uploads**: Google Drive, Telegram, and Rclone-supported clouds
+- **Customizable Processing**: Extract, compress, sample videos, take screenshots, and more 
+- **Powerful Media Tools**: Media info, IMDb data, custom thumbnails, subtitles
+- **Advanced Leech Options**: Split files, upload as document/media, custom captions
+- **User Management**: Authorization system, usage limits, queuing system
+- **Elegant UI**: Clean status display, progress tracking, and user-friendly commands
+- **Extended Search**: Torrent search, IMDb lookups, and media information retrieval
+- **Automation**: RSS feed monitoring and automatic downloads
 
 ---
 
-# Deployment Guide (VPS)
+# 🚀 Deployment Guide
 
 <details>
-  <summary><strong>View All Steps <kbd>Click Here</kbd></strong></summary>
+<summary><b>🖥️ VPS Deployment</b></summary>
 
----
+### Prerequisites
+- A VPS with Ubuntu/Debian
+- Docker and Docker Compose installed
+- Git installed
 
-## 1. Prerequisites
+### Steps
 
-- **Tutorial Video from A to Z (Latest Video)**
-- Special thanks to [Wiszky](https://github.com/vishnoe115)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/BeastBots/MirrorBeast && cd MirrorBeast
+   ```
 
-[![See Video](https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube)](https://youtu.be/xzLOLyKYl54)
+2. **Create your config file**
+   ```bash
+   cp config_sample.py config.py
+   ```
+   
+3. **Edit the config file with your settings**
+   ```bash
+   nano config.py
+   ```
 
----
+4. **Build and run with Docker Compose (recommended)**
+   ```bash
+   sudo docker-compose up -d
+   ```
 
-## 2. Installing Requirements
-
-Clone this repository:
-
-```bash
-git clone https://github.com/SilentDemonSD/WZML-X mirrorbot/ && cd mirrorbot
-```
-
----
-
-## 3. Build and Run the Docker Image
-
-*Make sure you mount the app folder and install Docker following the official documentation.*
-
-There are two methods to build and run the Docker image:
-
-### 3.1 Using Official Docker Commands
-
-- **Start Docker daemon** (skip if already running):
-
-  ```bash
-  sudo dockerd
-  ```
-
-- **Build the Docker image:**
-
-  ```bash
-  sudo docker build . -t wzmlx
-  ```
-
-- **Run the image:**
-
-  ```bash
-  sudo docker run -p 80:80 -p 8080:8080 wzmlx
-  ```
-
-- **To stop the running image:**
-
-  First, list running containers:
-
-  ```bash
-  sudo docker ps
-  ```
-
-  Then, stop the container using its ID:
-
-  ```bash
-  sudo docker stop <container_id>
-  ```
-
----
-
-### 3.2 Using docker-compose (Recommended)
-
-**Note:** If you want to use ports other than 80 and 8080 for torrent file selection and rclone serve respectively, update them in [docker-compose.yml](https://github.com/weebzone/WZML-X/blob/master/docker-compose.yml).
-
-- **Install docker-compose:**
-
-  ```bash
-  sudo apt install docker-compose
-  ```
-
-- **Build and run the Docker image (or view the current running image):**
-
-  ```bash
-  sudo docker-compose up
-  ```
-
-- **After editing files (e.g., using nano to edit start.sh), rebuild:**
-
-  ```bash
-  sudo docker-compose up --build
-  ```
-
-- **To stop the running image:**
-
-  ```bash
-  sudo docker-compose stop
-  ```
-
-- **To restart the image:**
-
-  ```bash
-  sudo docker-compose start
-  ```
-
-- **To view the latest logs from the running container (after mounting the folder):**
-
-  ```bash
-  sudo docker-compose up
-  ```
-
-- **Tutorial Video for docker-compose and checking ports:**
-
-  [![See Video](https://img.shields.io/badge/See%20Video-black?style=for-the-badge&logo=YouTube)](https://youtu.be/c8_TU1sPK08)
-
-
-------
-
-#### Docker Notes
-
-**IMPORTANT NOTES**:
-
-1. Set `BASE_URL_PORT` and `RCLONE_SERVE_PORT` variables to any port you want to use. Default is `80` and `8080` respectively.
-2. You should stop the running image before deleting the container and you should delete the container before the image.
-3. To delete the container (this will not affect on the image):
-
-```
-sudo docker container prune
-```
-
-4. To delete te images:
-
-```
-sudo docker image prune -a
-```
-
-5. Check the number of processing units of your machine with `nproc` cmd and times it by 4, then edit `AsyncIOThreadsCount` in qBittorrent.conf.
-    
-  </details></li></ol>
-</details>
-    
-------
-
-# Deployment Guide (Heroku)
-
-<details>
-  <summary><strong>View All Steps <kbd>Click Here</kbd></strong></summary>
-
----
-
-**Check the Docs Here :** [Click Here](https://github.com/SilentDemonSD/WZ-Deploy/tree/main?tab=readme-ov-file#2%EF%B8%8F⃣-method-2-github-workflow-guide)
-
----
+5. **View logs**
+   ```bash
+   sudo docker-compose logs -f
+   ```
 
 </details>
 
-## 🏅 **Bot Authors**
 <details>
-    <summary><b>Click Here For Description</b></summary>
+<summary><b>☁️ Heroku Deployment</b></summary>
 
-|<img width="80" src="https://avatars.githubusercontent.com/u/105407900">|<img width="80" src="https://avatars.githubusercontent.com/u/113664541">|<img width="80" src="https://avatars.githubusercontent.com/u/84721324">|
-|:---:|:---:|:---:|
-|[`SilentDemonSD`](https://github.com/SilentDemonSD)|[`CodeWithWeeb`](https://github.com/weebzone)|[`Maverick`](https://github.com/MajnuRangeela)|
-|Author and DDL, UI Design, More Customs..|Author and Wraps Up Features|Co-Author & Bug Tester|
+1. Fork this repository
+2. Go to your Heroku account and create a new app
+3. Connect the app to your GitHub repository
+4. Add the following buildpacks:
+   - heroku/python
+   - https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
+   - https://github.com/HasibulKabir/heroku-buildpack-rclone
+5. Add the required environment variables from config_sample.py
+6. Deploy the app
 
 </details>
+
+---
+
+# 📝 Configuration
+
+All configuration options are documented in the `config_sample.py` file. You can create your own `config.py` file based on this template.
+
+Key configuration sections:
+- Telegram API credentials
+- Bot behavior settings
+- Download/Upload preferences
+- Service integrations (Google Drive, Rclone, JDownloader, etc.)
+- User access control
+- Media processing options
+
+---
+
+# 🤖 Bot Commands
+
+<details>
+<summary><b>View Command List</b></summary>
+
+### General Commands
+- `/start` - Start the bot
+- `/help` - Get detailed help
+- `/stats` - Bot usage statistics
+- `/status` - Check ongoing tasks
+
+### Mirror Commands
+- `/mirror` - Mirror to cloud
+- `/qbmirror` - Mirror using qBittorrent
+- `/jdmirror` - Mirror using JDownloader
+- `/nzbmirror` - Mirror using Usenet
+
+### Leech Commands
+- `/leech` - Leech to Telegram
+- `/qbleech` - Leech using qBittorrent
+- `/jdleech` - Leech using JDownloader
+- `/nzbleech` - Leech using Usenet
+
+### Other Commands
+- `/clone` - Clone Google Drive files
+- `/count` - Count files in Drive
+- `/search` - Search torrents or Drive
+- `/cancel` - Cancel a task
+- `/ytdl` - Download YouTube videos
+- `/imdb` - Search IMDb for media info
+
+</details>
+
+---
+
+# 🌟 Public Leech Group
+
+For users who want to use our free public Mirror Beast bots, join our [leech group](https://t.me/MirrorBeastGroup).
+
+For additional services and links, check our [Beast Gateways](https://t.me/MirrorBeastGateways/8).
+
+---
+
+# 👥 Credits
+
+- Original base: [WZML-X](https://github.com/SilentDemonSD/WZML-X) by SilentDemonSD
+- Enormous thanks to all the contributors of the original projects
+
+---
+
+# ⚖️ License
+
+This project is licensed under the [MIT License](LICENSE).
 

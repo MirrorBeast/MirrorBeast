@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WZML-X</title>
+    <title>Mirror Beast - Your Ultimate Mirror/Leech Bot</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap');
@@ -13,10 +13,10 @@
         }
         
         :root {
-            --bg-color: #0a0f1c;
-            --primary-blue: #00b7ff;
-            --primary-yellow: #ffd700;
-            --primary-orange: #ff4500;
+            --bg-color: #0a1520;
+            --primary-blue: #2196f3;
+            --primary-teal: #00bcd4;
+            --primary-purple: #7c4dff;
             --text-color: #ffffff;
         }
 
@@ -27,7 +27,7 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Exo', sans-serif;
             background-color: #000000;
             color: var(--text-color);
             line-height: 1.6;
@@ -53,8 +53,8 @@
             height: 100%;
             background: 
                 radial-gradient(circle at 20% 20%, var(--primary-blue) 0%, transparent 40%),
-                radial-gradient(circle at 80% 20%, var(--primary-yellow) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, var(--primary-orange) 0%, transparent 40%);
+                radial-gradient(circle at 80% 20%, var(--primary-teal) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, var(--primary-purple) 0%, transparent 40%);
             opacity: 0.15;
             filter: blur(70px);
             z-index: 0;
@@ -64,14 +64,14 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            background: rgba(10, 15, 28, 0.7);
+            background: rgba(10, 21, 32, 0.7);
             padding: 3rem;
             border-radius: 15px;
             backdrop-filter: blur(20px);
             box-shadow: 
-                0 0 30px rgba(0, 183, 255, 0.2),
-                inset 0 0 30px rgba(0, 183, 255, 0.1);
-            border: 1px solid rgba(0, 183, 255, 0.1);
+                0 0 30px rgba(33, 150, 243, 0.2),
+                inset 0 0 30px rgba(33, 150, 243, 0.1);
+            border: 1px solid rgba(33, 150, 243, 0.1);
             animation: contentAppear 1s ease-out;
         }
 
@@ -95,7 +95,7 @@
             object-fit: cover;
             margin-bottom: 1.5rem;
             border: 2px solid var(--primary-blue);
-            box-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
+            box-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
             animation: logoSpin 10s linear infinite;
         }
 
@@ -109,11 +109,11 @@
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 5px;
-            background: linear-gradient(45deg, var(--primary-blue), var(--primary-yellow), var(--primary-orange));
+            background: linear-gradient(45deg, var(--primary-blue), var(--primary-teal), var(--primary-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 20px rgba(0, 183, 255, 0.3);
+            text-shadow: 0 0 20px rgba(33, 150, 243, 0.3);
         }
 
         .subtitle {
@@ -140,8 +140,8 @@
         .button {
             display: inline-block;
             padding: 0.8rem 1.5rem;
-            background: linear-gradient(45deg, var(--bg-color), #FF4D00, #FFDD00, #FFDD00, var(--primary-blue), var(--primary-blue), #00FFFF, white);
-            color: var(--bg-color);
+            background: linear-gradient(45deg, var(--bg-color), var(--primary-blue), var(--primary-teal), var(--primary-purple));
+            color: var(--text-color);
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
@@ -167,7 +167,7 @@
 
         .button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 183, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
         }
 
         .copyright {
@@ -179,7 +179,7 @@
 
         .tagline {
             font-size: 1rem;
-            color: var(--primary-yellow);
+            color: var(--primary-teal);
             margin-top: 1.5rem;
             font-weight: 500;
             letter-spacing: 1px;
@@ -197,14 +197,36 @@
             .subtitle {
                 font-size: 1rem;
             }
+        }
 
-            .links {
-                flex-direction: column;
-            }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
 
-            .button {
-                width: 100%;
-            }
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            background: rgba(33, 150, 243, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-teal);
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.2rem;
         }
     </style>
 </head>
@@ -212,28 +234,39 @@
     <div class="container">
         <div class="background-animation"></div>
         <div class="content">
-            <img class="logo" src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20250213_112455_659.jpg-n4TftLXY3h5mHsdJIZQPSWUTX58iLY.jpeg" alt="WZMLX Logo">
-            <div class="version">V3.0.0</div>
-            <h1><b>WZML-X</b></h1>
-            <p class="subtitle">Experience the next generation of workflow automation</p>
-
-            <div class="links">
-              <a href="https://t.me/WZML_X" class="button">
-                <i class="fab fa-telegram-plane"></i> Telegram Channel
-              </a>
-              <a href="https://t.me/WZML_Support" class="button">
-                <i class="fas fa-comments"></i> Support Group
-              </a>
-              <a href="https://github.com/SilentDemonSD/WZML-X" class="button">
-                <i class="fab fa-github"></i> GitHub Repository
-              </a>
-              <a href="https://wzmlx.mysterysd.in/docs" class="button">
-                <i class="fas fa-book"></i> Documentation
-              </a>
+            <img src="https://i.imgur.com/dX6GoKH.png" alt="Mirror Beast Logo" class="logo">
+            <h1>Mirror Beast</h1>
+            <div class="version">v1.0.0-beast</div>
+            <p class="subtitle">Your Ultimate Telegram Mirror/Leech Bot</p>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-cloud-download-alt"></i></div>
+                    <div class="feature-title">Multi-source</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <div class="feature-title">Cloud Upload</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-film"></i></div>
+                    <div class="feature-title">Media Tools</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-search"></i></div>
+                    <div class="feature-title">Search</div>
+                </div>
             </div>
-
-            <div class="tagline">SIMPLIFY YOUR WORKFLOW, MAXIMIZE YOUR IMPACT!</div>
-            <p class="copyright">&copy; 2025 WZML-X. All rights reserved.</p>
+            
+            <div class="links">
+                <a href="{{ BASE_URL }}/page" class="button">Web Interface <i class="fas fa-external-link-alt"></i></a>
+                <a href="https://t.me/MirrorBeast" target="_blank" class="button">Telegram Channel <i class="fab fa-telegram"></i></a>
+                <a href="https://t.me/MirrorBeastGroup" target="_blank" class="button">Leech Group <i class="fab fa-telegram"></i></a>
+            </div>
+            
+            <p class="tagline">Powerful • Feature-rich • User-friendly</p>
+            
+            <div class="copyright">&copy; 2024 Beast Bots. All rights reserved.</div>
         </div>
     </div>
 </body>
