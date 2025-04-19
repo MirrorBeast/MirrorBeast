@@ -1,0 +1,128 @@
+# Mirror/Leech Telegram Bot System Map
+
+/
+├── (1) bot/                               # Main bot application directory
+│   ├── (2) core/                          # Core components of the bot
+│   │   ├── config_manager.py              # Manages configuration settings
+│   │   ├── handlers.py                    # Command handlers for Telegram
+│   │   ├── jdownloader_booter.py          # JDownloader initialization
+│   │   ├── startup.py                     # Bot startup procedures
+│   │   ├── tg_client.py                   # Telegram client implementation
+│   │   └── torrent_manager.py             # Manages torrent clients
+│   ├── (3) modules/                       # Feature modules for the bot
+│   │   ├── mirror_leech.py                # Core mirror/leech functionality
+│   │   ├── ytdlp.py                       # YouTube download module
+│   │   ├── search.py                      # Search functionality
+│   │   ├── rss.py                         # RSS feed monitoring
+│   │   ├── clone.py                       # Google Drive clone module
+│   │   ├── bot_settings.py                # Bot settings manager
+│   │   ├── users_settings.py              # User-specific settings
+│   │   └── [other modules]                # Various command modules
+│   ├── (4) helper/                        # Helper utilities and services
+│   │   ├── (5) listeners/                 # Event listeners
+│   │   │   ├── task_listener.py           # Main task tracking system
+│   │   │   ├── aria2_listener.py          # Aria2 download tracker
+│   │   │   ├── qbit_listener.py           # qBittorrent tracker
+│   │   │   └── [other listeners]          # Other download trackers
+│   │   ├── (6) mirror_leech_utils/        # Mirror/leech utilities
+│   │   │   ├── (7) download_utils/        # Download managers
+│   │   │   │   ├── aria2_download.py      # Aria2 download handler
+│   │   │   │   ├── qbit_download.py       # qBittorrent handler
+│   │   │   │   ├── jd_download.py         # JDownloader handler
+│   │   │   │   ├── nzb_downloader.py      # SABnzbd handler
+│   │   │   │   ├── direct_downloader.py   # Direct link handler
+│   │   │   │   └── [other downloaders]    # Various download methods
+│   │   │   ├── (8) upload_utils/          # Upload managers
+│   │   │   │   └── telegram_uploader.py   # Telegram upload handler
+│   │   │   ├── gdrive_utils/              # Google Drive utilities
+│   │   │   └── rclone_utils/              # Rclone utilities
+│   │   ├── (9) ext_utils/                 # Extended utilities
+│   │   │   ├── bot_utils.py               # Bot helper functions
+│   │   │   ├── db_handler.py              # Database interactions
+│   │   │   ├── files_utils.py             # File operation utilities
+│   │   │   └── task_manager.py            # Task queue management
+│   │   └── telegram_helper/               # Telegram-specific utilities
+│   ├── __init__.py                        # Bot initialization
+│   └── __main__.py                        # Bot entry point
+├── (10) web/                              # Web interface
+│   ├── wserver.py                         # FastAPI web server
+│   ├── nodes.py                           # File browsing functionality
+│   └── templates/                         # HTML templates
+├── (11) sabnzbd/                          # SABnzbd integration
+├── (12) myjd/                             # JDownloader integration
+├── (13) qBittorrent/                      # qBittorrent configuration
+├── (14) sabnzbdapi/                       # SABnzbd API wrapper
+├── config.py                              # Main configuration file
+├── config_sample.py                       # Sample configuration
+├── requirements.txt                       # Python dependencies
+├── update.py                              # Update script
+└── [other files]                          # Other support files
+
+## Component Explanations
+
+1. **Bot Directory** - The core of the application containing all bot logic, modules, and functionality. This is the main code base that handles Telegram interactions, downloads, and uploads.
+
+2. **Core Components** - Essential components of the bot's operation:
+   - Handles configuration management through config_manager.py
+   - Routes Telegram commands via handlers.py
+   - Initializes various services (JDownloader, torrent clients)
+   - Manages startup procedures and client connections
+
+3. **Bot Modules** - Feature-specific modules that implement commands and functionality:
+   - mirror_leech.py - Primary functionality for downloading and uploading content
+   - ytdlp.py - YouTube video downloading capabilities
+   - search.py - Torrent search functionality
+   - rss.py - RSS feed monitoring for automated downloads
+   - Various utility modules for settings, status monitoring, and task management
+
+4. **Helper Directory** - Contains support utilities, services, and helper functions that are used throughout the bot:
+   - Organizes code into specialized categories like listeners, utils, and helpers
+   - Provides reusable functionality used by the modules
+
+5. **Listeners** - Event monitoring components that track download progress and status:
+   - task_listener.py - Main tracking system for all downloads and uploads
+   - Specialized listeners for each download method (aria2, qBittorrent, etc.)
+   - Handles events like download start, progress, completion, and errors
+
+6. **Mirror/Leech Utilities** - Specialized utilities for the core mirror and leech functionality:
+   - Organizes download and upload tools
+   - Provides status tracking and task management
+   - Handles file processing between download and upload
+
+7. **Download Utilities** - Implementations for various download methods:
+   - aria2_download.py - For torrents and direct links via Aria2
+   - qbit_download.py - For torrent downloads via qBittorrent
+   - jd_download.py - For downloads via JDownloader
+   - nzb_downloader.py - For Usenet downloads via SABnzbd
+   - Various other downloaders for specific sources (Google Drive, Mega, etc.)
+
+8. **Upload Utilities** - Implementations for various upload methods:
+   - telegram_uploader.py - For uploading files to Telegram
+   - Integration with Google Drive and other cloud services via gdrive_utils and rclone_utils
+
+9. **Extended Utilities** - General-purpose utilities used throughout the application:
+   - bot_utils.py - Common bot helper functions
+   - db_handler.py - Database interaction for persistent storage
+   - files_utils.py - File manipulation utilities
+   - task_manager.py - Manages task queues and limits
+
+10. **Web Interface** - FastAPI-based web interface for interacting with downloads:
+    - wserver.py - Web server implementation
+    - nodes.py - File browser functionality
+    - templates/ - HTML templates for the web UI
+
+11. **SABnzbd Directory** - Integration with SABnzbd for Usenet downloads:
+    - Configuration and setup for SABnzbd service
+    - Used in conjunction with nzb_downloader.py
+
+12. **MyJD Directory** - JDownloader integration components:
+    - Handles communication with JDownloader service
+    - Used in conjunction with jd_download.py
+
+13. **qBittorrent Directory** - Configuration and setup for qBittorrent:
+    - Settings and configuration for the qBittorrent client
+    - Used in conjunction with qbit_download.py
+
+14. **SABnzbdAPI Directory** - API wrapper for interacting with SABnzbd:
+    - Provides Python interface to the SABnzbd API
+    - Used by the nzb_downloader.py and web interface 
